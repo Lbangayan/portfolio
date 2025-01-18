@@ -4,32 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
-    <link rel="stylesheet" href="../styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="../style.css"> <!-- Link to your CSS file -->
 </head>
 <body>
-    <h1>Contact</h1>
-    <form action="mailto:foo@example.com" method="POST" enctype="text/plain">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br>
-        
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" required>
-        <br>
-        
-        <label for="body">Message:</label>
-        <textarea id="body" name="body" rows="4" required></textarea>
-        <br>
-        
-        <button>Submit</button>
-    </form>
-    <nav> 
-        <a href="../index.html">Home</a> 
-        <a href="../projects/index.html">Projects</a> 
-        <a href="index.html" class="current">Contact</a> 
-        <a href="../cover/index.html">Cover letter</a>
-        <a href="https://github.com/Lbangayan" target="_blank">GitHub</a> 
-    </nav>
-    
+    <header>
+        <nav> 
+            <a href="../index.html">Home</a> 
+            <a href="../projects/index.html">Projects</a> 
+            <a href="index.html" class="current">Contact</a> 
+            <a href="../cover/index.html">Cover letter</a>
+            <a href="https://github.com/Lbangayan" target="_blank">GitHub</a> 
+        </nav>
+    </header>
+    <main>
+        <h1>Contact</h1>
+        <form action="mailto:foo@example.com" method="POST" enctype="text/plain">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+            
+            <label for="body">Message:</label>
+            <textarea id="body" name="body" rows="4" required></textarea>
+            
+            <button>Submit</button>
+        </form>
+    </main>
 </body>
 </html>

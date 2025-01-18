@@ -1,0 +1,90 @@
+:root {
+    --color-accent: oklch(65% 50% 0); /* Define the accent color */
+}
+
+html {
+    accent-color: var(--color-accent); /* Apply the accent color */
+}
+
+body {
+    font: 100%/1.5 system-ui;
+    max-width: 100ch;
+    margin-inline: auto;
+    padding-left: 1rem; /* Add padding to the left */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    padding: 1rem 0; /* Add padding to the top and bottom */
+    margin-bottom: 1rem; /* Add margin to separate from content below */
+    border-bottom: 1px solid oklch(80% 3% 200); /* Add bottom border */
+}
+
+nav a {
+    flex: 1;
+    text-align: center; /* Center the text within each flex item */
+    padding: 0.5em; /* Add padding inside each link */
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit text color */
+}
+
+nav a.current {
+    font-weight: bold; /* Highlight the current page */
+    border-bottom: 0.4em solid oklch(80% 3% 200); /* Add thick bottom border */
+    padding-bottom: 0.1em; /* Reduce padding-bottom to counter border height */
+}
+
+nav a:hover {
+    border-bottom: 0.4em solid var(--color-accent); /* Apply accent color on hover */
+}
+
+/* Contact form styling using CSS Grid */
+form {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Define two columns: auto and 1fr */
+    gap: 1em; /* Add gap between grid items */
+    align-items: center; /* Align items vertically */
+}
+
+form label {
+    text-align: right; /* Align text to the right */
+}
+
+form input,
+form textarea {
+    width: 100%; /* Make form controls take up the whole width */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+form button {
+    grid-column: 1 / -1; /* Span the entire row */
+}
+
+/* Projects grid styling */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* Flexible columns */
+    gap: 1em; /* Add gap between grid items */
+}
+
+.projects article {
+    display: grid;
+    grid-template-rows: subgrid; /* Use subgrid for rows */
+    grid-row: span 3; /* Span 3 rows */
+    gap: 1em; /* Add gap between elements */
+}
+
+.projects h2 {
+    margin: 0; /* Remove margin from headings */
+}
+
+/* Heading styles */
+h1 {
+    font-size: 400%; /* Make h1 significantly larger */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1; /* Smaller leading for headings */
+    text-wrap: balance; /* Prevent uneven lines */
+}
