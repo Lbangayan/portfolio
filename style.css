@@ -3,4 +3,29 @@ body {
          and use the OS’s UI font as the website font
        */
     font: 100%/1.5 system-ui;
-  }
+    max-width: 100ch;
+    margin-inline: auto;
+    padding-left: 1rem; /* Add padding to the left */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    padding: 1rem 0; /* Add padding to the top and bottom */
+    margin-bottom: 1rem; /* Add margin to separate from content below */
+    border-bottom: 1px solid oklch(80% 3% 200); /* Add bottom border */
+}
+
+nav a {
+    flex: 1;
+    text-align: center; /* Center the text within each flex item */
+    padding: 0.5em; /* Add padding inside each link */
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit text color */
+}
+
+nav a.current {
+    font-weight: bold; /* Highlight the current page */
+    border-bottom: 0.4em solid oklch(80% 3% 200); /* Add thick bottom border */
+    padding-bottom: 0.1em; /* Reduce padding-bottom to counter border height */
+}
