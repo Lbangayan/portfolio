@@ -5,10 +5,10 @@ console.log('IT’S ALIVE!');
 // }
 
 let pages = [
-  { url: 'portfolio/index.html', title: 'Home' },
-  { url: 'portfolio/Projects/index.html', title: 'Projects' },
-  { url: 'portfolio/Contact/index.html', title: 'Contact' },
-  { url: 'portfolio/Cover/index.html', title: 'Cover' },
+  { url: 'index.html', title: 'Home' },
+  { url: 'Projects/index.html', title: 'Projects' },
+  { url: 'Contact/index.html', title: 'Contact' },
+  { url: 'Cover/index.html', title: 'Cover' },
   { url: 'https://github.com/Lbangayan', title: 'GitHub' },
 ];
 
@@ -25,9 +25,8 @@ for (let p of pages) {
   let url = p.url;
   let title = p.title;
   
-  if (!ARE_WE_HOME && url !== 'https://github.com/Lbangayan') {
-    url = '../' + url;
-  }
+  url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
+
 
   let a = document.createElement('a');
   a.href = url;
@@ -37,9 +36,10 @@ for (let p of pages) {
     a.target = '_blank'; // Open external links in a new tab
   }
   nav.append(a);
-  if (a.host === location.host && a.pathname === location.pathname) {
-    a.classList.add('current');
-  }
+  a.classList.toggle(
+    'current',
+    a.host === location.host && a.pathname === location.pathname
+  );
 }
 
 document.body.insertAdjacentHTML(
