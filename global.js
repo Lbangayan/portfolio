@@ -5,10 +5,10 @@ console.log('IT’S ALIVE!');
 // }
 
 let pages = [
-  { url: '', title: 'Home' },
-  { url: 'Projects/', title: 'Projects' },
-  { url: 'Contact/', title: 'Contact' },
-  { url: 'Cover/', title: 'Cover' },
+  { url: 'index.html', title: 'Home' },
+  { url: 'Projects/index.html', title: 'Projects' },
+  { url: 'Contact/index.html', title: 'Contact' },
+  { url: 'Cover/index.html', title: 'Cover' },
   { url: 'https://github.com/Lbangayan', title: 'GitHub' },
 ];
 
