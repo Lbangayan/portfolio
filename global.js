@@ -5,10 +5,10 @@ console.log('IT’S ALIVE!');
 // }
 
 let pages = [
-  { url: 'index.html', title: 'Home' },
-  { url: 'Projects/index.html', title: 'Projects' },
-  { url: 'Contact/index.html', title: 'Contact' },
-  { url: 'Cover/index.html', title: 'Cover' },
+  { url: 'portfolio/index.html', title: 'Home' },
+  { url: 'portfolio/Projects/index.html', title: 'Projects' },
+  { url: 'portfolio/Contact/index.html', title: 'Contact' },
+  { url: 'portfolio/Cover/index.html', title: 'Cover' },
   { url: 'https://github.com/Lbangayan', title: 'GitHub' },
 ];
 
@@ -24,10 +24,7 @@ console.log('BASE_URL', BASE_URL);
 for (let p of pages) {
   let url = p.url;
   let title = p.title;
-  if (url !== 'https://github.com/Lbangayan') {
-    url = BASE_URL + url;
-    console.log('url:', url);
-  }
+  
   if (!ARE_WE_HOME && url !== 'https://github.com/Lbangayan') {
     url = '../' + url;
   }
