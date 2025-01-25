@@ -29,11 +29,12 @@ for (let p of pages) {
   }
   if (url !== 'https://github.com/Lbangayan') {
     url = BASE_URL + url;
+    console.log('url:', url);
   }
   let a = document.createElement('a');
   a.href = url;
   a.textContent = title;
-  console.log('url:', a.href);
+  console.log('a.href:', a.href);
   if (url==='https://github.com/Lbangayan') {
     a.target = '_blank'; // Open external links in a new tab
   }
