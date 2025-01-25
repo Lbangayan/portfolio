@@ -4,6 +4,9 @@
 
 html {
     accent-color: var(--color-accent); /* Apply the accent color */
+    color-scheme: light dark; /* Enable light and dark mode */
+    border-bottom-color: var(--border-color); /* Apply border color */
+
 }
 
 body {
@@ -14,11 +17,12 @@ body {
 }
 
 nav {
-    display: flex;
+    display: flex; /* Use flexbox for navigation */
+    --border-color: oklch(50% 10% 200 / 40%); /* Add border color */
     justify-content: space-between; /* Distribute space between items */
     padding: 1rem 0; /* Add padding to the top and bottom */
     margin-bottom: 1rem; /* Add margin to separate from content below */
-    border-bottom: 1px solid oklch(80% 3% 200); /* Add bottom border */
+    border-bottom: 1px solid oklch(80% 3% 200); /* Add bottom border *;
 }
 
 nav a {
@@ -37,6 +41,16 @@ nav a.current {
 
 nav a:hover {
     border-bottom: 0.4em solid var(--color-accent); /* Apply accent color on hover */
+    background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+
+}
+
+.color-scheme {
+    position: absolute; /* Take the element out of the normal document flow */
+    top: 1rem; /* Offset from the top edge */
+    right: 1rem; /* Offset from the right edge */
+    font-size: 80%; /* Make the font a little smaller */
+    font-family: inherit; /* Inherit the font-family from the parent */
 }
 
 /* Contact form styling using CSS Grid */
@@ -52,7 +66,9 @@ form label {
 }
 
 form input,
-form textarea {
+form textarea,
+form select,
+form button {
     width: 100%; /* Make form controls take up the whole width */
     box-sizing: border-box; /* Include padding and border in width */
 }
