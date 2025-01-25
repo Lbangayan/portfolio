@@ -34,7 +34,7 @@ for (let p of pages) {
   let a = document.createElement('a');
   a.href = url;
   a.textContent = title;
-  if (url!=='https://github.com/Lbangayan') {
+  if (url==='https://github.com/Lbangayan') {
     a.target = '_blank'; // Open external links in a new tab
   }
   nav.append(a);
