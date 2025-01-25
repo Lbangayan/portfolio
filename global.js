@@ -24,6 +24,7 @@ console.log('BASE_URL', BASE_URL);
 for (let p of pages) {
   let url = p.url;
   let title = p.title;
+  console.log('url:', BASE_URL + url);
   if (!ARE_WE_HOME && !url.startsWith('https://github.com/Lbangayan')) {
     url = '../' + url;
   }
