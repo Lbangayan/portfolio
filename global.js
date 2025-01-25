@@ -29,6 +29,7 @@ for (let p of pages) {
   }
   if (!url.startsWith('http')) {
     url = BASE_URL + url;
+    console.log('url:', url);
   }
   let a = document.createElement('a');
   a.href = url;
