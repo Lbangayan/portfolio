@@ -24,13 +24,14 @@ console.log('BASE_URL', BASE_URL);
 for (let p of pages) {
   let url = p.url;
   let title = p.title;
-  if (!ARE_WE_HOME && url !== 'https://github.com/Lbangayan') {
-    url = '../' + url;
-  }
   if (url !== 'https://github.com/Lbangayan') {
     url = BASE_URL + url;
     console.log('url:', url);
   }
+  if (!ARE_WE_HOME && url !== 'https://github.com/Lbangayan') {
+    url = '../' + url;
+  }
+
   let a = document.createElement('a');
   a.href = url;
   a.textContent = title;
