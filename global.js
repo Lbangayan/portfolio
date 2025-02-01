@@ -18,7 +18,6 @@ document.body.prepend(nav);
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
 
 const BASE_URL = window.location.pathname.includes('/portfolio/') ? '/portfolio/' : '';
-console.log('BASE_URL', BASE_URL);
 
 
 for (let p of pages) {
@@ -31,7 +30,6 @@ for (let p of pages) {
   let a = document.createElement('a');
   a.href = url;
   a.textContent = title;
-  console.log('a.href:', a.href);
   if (url==='https://github.com/Lbangayan') {
     a.target = '_blank'; // Open external links in a new tab
   }
@@ -69,3 +67,44 @@ if (localStorage.colorScheme) {
 }
 
 
+export async function fetchJSON(url) {
+  try {
+      // Fetch the JSON file from the given URL
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch projects: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      console.log(data);
+      return data; 
+
+
+  } catch (error) {
+      console.error('Error fetching or parsing JSON data:', error);
+  }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  containerElement.innerHTML = '';
+  for (let project of projects) {
+    let article = document.createElement('article');
+    article.innerHTML = `
+      <${headingLevel}>${project.title}</${headingLevel}>
+      <img src="${project.image}" alt="${project.title}">
+      <p>${project.description}</p>
+    `;
+    containerElement.appendChild(article);
+  }
+  // Update the project count if the element exists
+  const projectCountElement = document.getElementById('project-count');
+  if (projectCountElement) {
+    projectCountElement.textContent = projects.length;
+  }
+}
+
+export async function fetchGitHubData(username) {
+  // return statement here
+  return fetchJSON(`https://api.github.com/users/${username}`);
+
+}
