@@ -7,11 +7,23 @@
     <link rel="stylesheet" href="../style.css"> <!-- Link to your CSS file -->
 </head>
 <body>
-    <header>
 
+
+    <header>
     </header>
     <main>
         <h1 class="projects-title"><span id="project-count">0</span> Projects</h1> <!-- Add projects-title class and project count placeholder -->
+        <div class="container">
+            <svg id="projects-pie-plot" viewBox="-50 -50 100 100">
+            </svg>
+            <ul class="legend"></ul>
+        </div>
+        <input
+            class="searchBar"
+            type="search"
+            aria-label="Search projects"
+            placeholder="🔍 Search projects…"
+            />
         <div class="projects">
             <!-- Dynamically added content will appear here -->
         </div>
@@ -19,6 +31,5 @@
         <script src="projects.js" type="module"></script>
     </main>
     <script type="module" src="../global.js"></script> <!-- Link to global.js as a module -->
-
 </body>
 </html>
