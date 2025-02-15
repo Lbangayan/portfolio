@@ -1,0 +1,9 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore the generated CSV file
+meta/loc.csv
+
+# Other files and directories to ignore
+.DS_Store
+*.log
