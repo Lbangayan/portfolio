@@ -106,18 +106,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Profile stats styling */
-#profile-stats dl {
+#profile-stats dl,
+#stats dl {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Four equal-sized columns */
     gap: 1em; /* Add gap between grid items */
 }
 
-#profile-stats dt {
+#profile-stats dt,
+#stats dt {
     grid-row: 1; /* Place all <dt> elements on the first row */
     font-weight: bold; /* Make the term bold */
 }
 
-#profile-stats dd {
+#profile-stats dd,
+#stats dd {
     grid-row: 2; /* Place all <dd> elements on the second row */
     margin: 0; /* Remove default margin */
 }
@@ -204,3 +207,104 @@ path.clickable {
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
     font-size: 1em; /* Adjust the font size */
 }
+
+.gridlines line{
+    stroke: lightgray; /* Light gray color for gridlines */
+    stroke-opacity: 0.7; /* Slightly transparent */
+    stroke-width: 1px; /* Thin lines */
+}
+
+/* Hover styles for dots */
+circle {
+    transition: 200ms;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  
+  circle:hover {
+    transform: scale(1.5);
+  }
+
+/* Style for <dl> elements with the .info class */
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr; /* Two columns: auto for <dt> and 1fr for <dd> */
+  gap: 0.5em; /* Add gap between grid items */
+  margin: 0; /* Remove default margins */
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info dt {
+  font-weight: normal; /* Make labels less prominent */
+  color: gray; /* Lighter color for labels */
+}
+
+dl.info dd {
+  margin: 0; /* Remove default margins */
+  font-weight: bold; /* Make values more prominent */
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Style for elements with the .tooltip class */
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  border: 1px solid lightgray; /* Border for tooltip */
+  padding: 0.5em; /* Padding for tooltip */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation effect */
+  border-radius: 0.5em; /* Rounded corners */
+  backdrop-filter: blur(5px); /* Frosted glass effect */
+  z-index: 1000; /* Ensure tooltip is on top */
+  pointer-events: none; /* Prevent tooltip from interfering with mouse events */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.2s; /* Smooth transition for showing/hiding */
+}
+
+.tooltip.visible {
+  opacity: 1; /* Show tooltip when visible class is added */
+}
+/* Style for selected dots */
+circle.selected {
+    fill: #ff6b6b;
+  }
+@keyframes marching-ants {
+    to {
+      stroke-dashoffset: -8; /* 5 + 3 */
+    }
+  }
+  
+  .selection {
+    fill-opacity: 0.1;
+    stroke: black;
+    stroke-opacity: 0.7;
+    stroke-dasharray: 5 3;
+    animation: marching-ants 2s linear infinite;
+  }
+
+/* Language breakdown styling */
+#language-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10em, 1fr)); /* Flexible columns */
+    gap: 1em; /* Add gap between grid items */
+  }
+  
+  #language-breakdown dt {
+    font-weight: bold; /* Make the term bold */
+    text-align: center; /* Center the text */
+    font-size: 1.2em; /* Increase font size */
+    text-transform: uppercase; /* Capitalize text */
+  }
+  
+  #language-breakdown dd {
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center the text */
+    font-size: 1.2em; /* Increase font size */
+    text-transform: capitalize; /* Capitalize text */
+  }
